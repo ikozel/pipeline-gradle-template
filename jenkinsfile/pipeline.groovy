@@ -3,12 +3,12 @@ node {
                 checkout scm
         }
         stage('Build') {
-                sh '~/workspace/apache-maven-3.5.0/bin/mvn clean build'
+                sh 'gradle clean build'
         }
         stage('Test') {
-                sh '~/workspace/apache-maven-3.5.0/bin/mvn test'
+                sh 'gradle test'
         }
         stage('Package') {
-                sh '~/workspace/apache-maven-3.5.0/bin/mvn jar'
+                sh 'gradle jar'
         }
 }
