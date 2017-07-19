@@ -1,3 +1,7 @@
+@Library('Jenkinsfiles@master')
+import com.sample.pipeline.ComponentPipeline
+new ComponentPipeline(this).main()
+
 node {
         stage('Checkout') {
                 checkout scm
