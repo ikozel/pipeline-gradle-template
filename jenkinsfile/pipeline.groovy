@@ -1,6 +1,6 @@
 @Library('Jenkinsfiles@master')
 import com.sample.pipeline.ComponentPipeline
-new ComponentPipeline(this).main()
+new ComponentPipeline(this).invoke()
 
 //node {
 //        stage('Checkout') {
