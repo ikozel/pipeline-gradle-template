@@ -23,9 +23,6 @@
     "subnetPrefixPrivate": {
       "type": "string"
     },
-    "clusterName": {
-      "type": "string"
-    },
     "location": {
       "type": "string"
     }
@@ -41,8 +38,7 @@
       "location": "[parameters('location')]",
       "tags": {
         "provider": "[toUpper(parameters('providerID'))]",
-        "displayName": "Virtual Network",
-        "cluster": "[parameters('clusterName')]"
+        "displayName": "Virtual Network"
       },
       "properties": {
         "addressSpace": {
