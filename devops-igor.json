@@ -1,6 +1,74 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
+
+  "artifactsBaseUrl": {
+    "type": "string"
+  },
+  "projectName": {
+    "type": "string"
+  },
+  "adminName": {
+    "type": "string"
+  },
+  "adminAuthType": {
+    "type": "string"
+  },
+  "adminPwd": {
+    "type": "securestring"
+  },
+  "adminPublicKey": {
+    "type": "string"
+  },
+  "packageVersion": {
+    "type": "string"
+  },
+  "nodeCount": {
+    "type": "int"
+  },
+  "instanceType": {
+    "type": "string"
+  },
+  "diskType": {
+    "type": "string"
+  },
+  "licenseType": {
+    "type": "string"
+  },
+  "diskSize":  {
+    "type": "int"
+  },
+  "diskCount": {
+    "type": "int"
+  },
+  "publicAccessCIDR": {
+    "type": "string"
+  },
+  "vnetName": {
+    "type": "string"
+  },
+  "vnetResourceGroup": {
+    "type": "string"
+  },
+  "vnetAddressPrefix": {
+    "type": "string"
+  },
+  "vnetNewOrExisting": {
+    "type": "string"
+  },
+  "vnetPrivateSubnetName": {
+    "type": "string"
+  },
+  "vnetPrivateSubnetAddressPrefix": {
+    "type": "string"
+  },
+
+  "vnetPublicSubnetName": {
+    "type": "string"
+  },
+  "vnetPublicSubnetAddressPrefix": {
+    "type": "string"
+  },
   "parameters": {
     "providerID": {
       "type": "string"
@@ -23,6 +91,9 @@
     "subnetPrefixPrivate": {
       "type": "string"
     },
+    "clusterName": {
+      "type": "string"
+    },
     "location": {
       "type": "string"
     }
@@ -38,7 +109,8 @@
       "location": "[parameters('location')]",
       "tags": {
         "provider": "[toUpper(parameters('providerID'))]",
-        "displayName": "Virtual Network"
+        "displayName": "Virtual Network",
+        "cluster": "[parameters('clusterName')]"
       },
       "properties": {
         "addressSpace": {
