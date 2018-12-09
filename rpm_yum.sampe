@@ -1,0 +1,8 @@
+[vagrant@localhost ~]$ yum list installed | grep perl | wc -l 
+35
+[vagrant@localhost ~]$ rpm -qa | grep perl | wc -l
+35
+[vagrant@localhost ~]$ yum list installed | wc -l 
+588
+[vagrant@localhost ~]$ rpm -qa | wc -l
+591
